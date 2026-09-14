@@ -373,3 +373,24 @@ button:hover{
 
 }
 
+
+body {
+    min-height: 100%;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+    padding-bottom: 50px;
+}
+
+
