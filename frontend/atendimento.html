@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projeto Sentinela - Atendimento</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <div class="logo">
+        <img src="ChatGPT Image 17_08_2026, 11_07_05.png" alt="">
+    </div>
+
+    <h1>HealthSys</h1>
+    <h2>sistema de saúde.</h2>
+
+    <span class="subtitulo">
+        Cadastro de Pacientes
+    </span>
+
+    <input
+        id="nome"
+        type="text"
+        placeholder="Nome Completo">
+
+    <input
+        id="cpf"
+        type="text"
+        placeholder="CPF">
+
+    <select id="tipo">
+
+        <option value="Convenio">🏥 Convênio</option>
+
+        <option value="Particular">💳 Particular</option>
+
+    </select>
+
+    <label class="upload">
+
+        📷 Foto do Paciente
+
+        <input
+            type="file"
+            id="foto">
+
+    </label>
+
+    <button onclick="cadastrar()">
+
+        ➜ Enviar para Triagem
+
+    </button>
+
+</div>
+
+<script>
+
+function cadastrar(){
+
+ fetch("http://localhost:3000/atendimento",{
+
+  method:"POST",
+
+  headers:{"Content-Type":"application/json"},
+
+  body: JSON.stringify({
+
+    nome: nome.value,
+
+    cpf: cpf.value,
+
+    tipo: tipo.value
+
+  })
+
+ });
+
+ alert("Paciente enviado para triagem");
+
+}
+
+</script>
+
+</body>
+</html>
+```

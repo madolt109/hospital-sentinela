@@ -1,0 +1,375 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, Arial, sans-serif;
+}
+
+body{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#EAF4FA;
+
+    overflow:hidden;
+
+}
+
+/* Fundo */
+
+.background{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(135deg,#0A6EBD,#084C8D);
+
+    clip-path:circle(70% at right);
+
+}
+
+/* Caixa */
+
+.container{
+
+    position:relative;
+
+    width:430px;
+
+    background:#FFF;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.20);
+
+}
+
+/* Ícone */
+
+.logo {
+    width: 220px;
+    margin: 0 auto 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+/* Título */
+
+h1{
+
+    color:#0A6EBD;
+
+    margin-bottom:8px;
+
+}
+
+p{
+
+    color:#777;
+
+    margin-bottom:30px;
+
+}
+
+/* Inputs */
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:18px;
+
+    border:1px solid #D7DEE5;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:#0A6EBD;
+
+    box-shadow:0 0 8px rgba(10,110,189,.25);
+
+}
+
+/* Botão */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#0A6EBD;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#084C8D;
+
+    transform:translateY(-2px);
+
+}
+
+/* Placeholder */
+
+::placeholder{
+
+    color:#999;
+
+}
+
+/* Responsivo */
+
+@media(max-width:500px){
+
+.container{
+
+    width:90%;
+    padding:30px;
+
+}
+
+.background{
+
+    clip-path:none;
+
+}
+
+
+
+}
+
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#EAF5FB;
+
+    overflow:hidden;
+
+}
+
+.background{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(135deg,#0A6EBD,#084C8D);
+
+    clip-path:circle(70% at right);
+
+}
+
+.container{
+
+    position:relative;
+
+    width:480px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.20);
+
+}
+
+.logo{
+
+    width:90px;
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#EAF6FF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+}
+
+h1{
+
+    color:#0A6EBD;
+
+    margin-bottom:8px;
+
+}
+
+.subtitulo{
+
+    display:block;
+
+    color:#666;
+
+    margin-bottom:30px;
+
+}
+
+input,
+select{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:18px;
+
+    border:1px solid #D9E3EC;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+}
+
+input:focus,
+select:focus{
+
+    outline:none;
+
+    border-color:#0A6EBD;
+
+    box-shadow:0 0 8px rgba(10,110,189,.2);
+
+}
+
+.upload{
+
+    display:block;
+
+    text-align:left;
+
+    padding:15px;
+
+    border:2px dashed #0A6EBD;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    color:#0A6EBD;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+.upload input{
+
+    margin-top:10px;
+
+    border:none;
+
+    padding:0;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    background:#0A6EBD;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#084C8D;
+
+    transform:translateY(-2px);
+
+}
+

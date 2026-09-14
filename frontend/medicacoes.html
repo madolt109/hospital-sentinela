@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projeto Sentinela - Medicações</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+   
+</div>
+
+<div class="main">
+
+    <div class="topo">
+
+        <h1>💊 Medicações Prescritas</h1>
+
+        <span>Sistema Hospitalar</span>
+
+    </div>
+
+    <div id="listaMedicacoes" class="cards"></div>
+
+</div>
+
+<script>
+
+function carregarMedicacoesPrescritas() {
+
+fetch("/medicacoes")
+
+.then(r=>r.json())
+
+.then(data=>{
+
+const div=document.getElementById("listaMedicacoes");
+
+div.innerHTML="";
+
+if(data.length===0){
+
+div.innerHTML="<p>Nenhuma medicação prescrita.</p>";
+
+return;
+
+}
+
+data.forEach(c=>{
+
+div.innerHTML+=`
+
+<div class="card">
+
+<h2>👤 ${c.paciente}</h2>
+
+<p><strong>💊 Medicação:</strong> ${c.medicacao}</p>
+
+<p><strong>🩺 Diagnóstico:</strong> ${c.diagnostico}</p>
+
+<p><strong>📝 Observações:</strong> ${c.obs || "Nenhuma"}</p>
+
+</div>
+
+`;
+
+});
+
+});
+
+}
+
+carregarMedicacoesPrescritas();
+
+</script>
+
+</body>
+</html>
