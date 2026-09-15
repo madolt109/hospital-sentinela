@@ -1,396 +1,345 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Segoe UI, Arial, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
-body{
+/* =========================
+   PÁGINA
+========================= */
 
-    height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:#EAF4FA;
-
-    overflow:hidden;
-
+html {
+    min-height: 100%;
 }
 
-/* Fundo */
+body {
+    min-height: 100vh;
 
-.background{
-
-    position:absolute;
-
-    width:100%;
-    height:100%;
-
-    background:linear-gradient(135deg,#0A6EBD,#084C8D);
-
-    clip-path:circle(70% at right);
-
-}
-
-/* Caixa */
-
-.container{
-
-    position:relative;
-
-    width:430px;
-
-    background:#FFF;
-
-    border-radius:20px;
-
-    padding:40px;
-
-    text-align:center;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.20);
-
-}
-
-/* Ícone */
-
-.logo {
-    width: 220px;
-    margin: 0 auto 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding: 30px 15px;
+
+    background: #EAF4FA;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    position: relative;
+}
+
+
+/* =========================
+   FUNDO
+========================= */
+
+.background {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        135deg,
+        #0A6EBD,
+        #084C8D
+    );
+
+    clip-path: circle(70% at right);
+
+    z-index: 0;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    position: relative;
+
+    width: 480px;
+    max-width: 100%;
+
+    background: #FFFFFF;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.20);
+
+    z-index: 1;
+
+    margin: auto;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    width: 100px;
+    height: 100px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #EAF6FF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
 }
 
 .logo img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+
     object-fit: contain;
-}
-/* Título */
 
-h1{
-
-    color:#0A6EBD;
-
-    margin-bottom:8px;
-
-}
-
-p{
-
-    color:#777;
-
-    margin-bottom:30px;
-
-}
-
-/* Inputs */
-
-input{
-
-    width:100%;
-
-    padding:15px;
-
-    margin-bottom:18px;
-
-    border:1px solid #D7DEE5;
-
-    border-radius:10px;
-
-    font-size:15px;
-
-    transition:.3s;
-
-}
-
-input:focus{
-
-    outline:none;
-
-    border-color:#0A6EBD;
-
-    box-shadow:0 0 8px rgba(10,110,189,.25);
-
-}
-
-/* Botão */
-
-button{
-
-    width:100%;
-
-    padding:15px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#0A6EBD;
-
-    color:white;
-
-    font-size:16px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-button:hover{
-
-    background:#084C8D;
-
-    transform:translateY(-2px);
-
-}
-
-/* Placeholder */
-
-::placeholder{
-
-    color:#999;
-
-}
-
-/* Responsivo */
-
-@media(max-width:500px){
-
-.container{
-
-    width:90%;
-    padding:30px;
-
-}
-
-.background{
-
-    clip-path:none;
-
+    display: block;
 }
 
 
+/* =========================
+   TÍTULOS
+========================= */
 
+h1 {
+    color: #0A6EBD;
+
+    margin-bottom: 5px;
+
+    font-size: 28px;
+}
+
+h2 {
+    color: #111;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+h3 {
+    color: #0A6EBD;
+
+    text-align: left;
+
+    font-size: 18px;
+
+    margin-top: 25px;
+    margin-bottom: 15px;
+
+    border-bottom: 1px solid #E1E8EF;
+
+    padding-bottom: 8px;
+}
+
+p {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.subtitulo {
+    display: block;
+
+    color: #666;
+
+    margin-bottom: 25px;
+
+    font-size: 16px;
 }
 
 
-
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-}
-
-body{
-
-    height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:#EAF5FB;
-
-    overflow:hidden;
-
-}
-
-.background{
-
-    position:fixed;
-
-    width:100%;
-    height:100%;
-
-    background:linear-gradient(135deg,#0A6EBD,#084C8D);
-
-    clip-path:circle(70% at right);
-
-}
-
-.container{
-
-    position:relative;
-
-    width:480px;
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:40px;
-
-    text-align:center;
-
-    box-shadow:0 20px 40px rgba(0,0,0,.20);
-
-}
-
-.logo{
-
-    width:90px;
-    height:90px;
-
-    margin:auto;
-
-    border-radius:50%;
-
-    background:#EAF6FF;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:45px;
-
-    margin-bottom:15px;
-
-}
-
-h1{
-
-    color:#0A6EBD;
-
-    margin-bottom:8px;
-
-}
-
-.subtitulo{
-
-    display:block;
-
-    color:#666;
-
-    margin-bottom:30px;
-
-}
+/* =========================
+   CAMPOS
+========================= */
 
 input,
-select{
+select,
+textarea {
+    width: 100%;
 
-    width:100%;
+    padding: 14px;
 
-    padding:14px;
+    margin-bottom: 15px;
 
-    margin-bottom:18px;
+    border: 1px solid #D9E3EC;
 
-    border:1px solid #D9E3EC;
+    border-radius: 10px;
 
-    border-radius:10px;
+    font-size: 15px;
 
-    font-size:15px;
+    background: #FFFFFF;
 
+    transition: 0.3s;
 }
 
 input:focus,
-select:focus{
+select:focus,
+textarea:focus {
+    outline: none;
 
-    outline:none;
+    border-color: #0A6EBD;
 
-    border-color:#0A6EBD;
-
-    box-shadow:0 0 8px rgba(10,110,189,.2);
-
+    box-shadow:
+        0 0 8px rgba(10, 110, 189, 0.20);
 }
 
-.upload{
+textarea {
+    min-height: 100px;
 
-    display:block;
-
-    text-align:left;
-
-    padding:15px;
-
-    border:2px dashed #0A6EBD;
-
-    border-radius:10px;
-
-    margin-bottom:20px;
-
-    color:#0A6EBD;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
+    resize: vertical;
 }
 
-.upload input{
-
-    margin-top:10px;
-
-    border:none;
-
-    padding:0;
-
-}
-
-button{
-
-    width:100%;
-
-    padding:15px;
-
-    background:#0A6EBD;
-
-    color:white;
-
-    border:none;
-
-    border-radius:10px;
-
-    font-size:16px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-button:hover{
-
-    background:#084C8D;
-
-    transform:translateY(-2px);
-
+::placeholder {
+    color: #999;
 }
 
 
-body {
-    min-height: 100%;
-    height: auto;
-    overflow-y: auto;
-    overflow-x: hidden;
+/* =========================
+   LABEL
+========================= */
+
+label {
+    display: block;
+
+    text-align: left;
+
+    color: #555;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
 }
 
-body {
-    margin: 0;
+
+/* =========================
+   UPLOAD DE FOTO
+========================= */
+
+.upload {
+    display: block;
+
+    text-align: left;
+
+    padding: 15px;
+
+    border: 2px dashed #0A6EBD;
+
+    border-radius: 10px;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    color: #0A6EBD;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    background: #F7FBFF;
+}
+
+.upload:hover {
+    background: #EEF7FD;
+}
+
+.upload input {
+    margin-top: 10px;
+
+    margin-bottom: 0;
+
+    border: none;
+
     padding: 0;
-}
 
-.container {
-    min-height: 100vh;
-    height: auto;
-    overflow: visible;
-    padding-bottom: 50px;
+    box-shadow: none;
 }
 
 
+/* =========================
+   BOTÃO
+========================= */
+
+button {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #0A6EBD;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #084C8D;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 10px;
+
+        align-items: flex-start;
+    }
+
+    .container {
+        width: 100%;
+
+        padding: 25px 20px;
+
+        margin-top: 10px;
+    }
+
+    .background {
+        clip-path: none;
+    }
+
+    .logo {
+        width: 85px;
+        height: 85px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+}
