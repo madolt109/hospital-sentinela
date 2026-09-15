@@ -44,37 +44,69 @@
 
 <script>
 
-function login() {
+async function login() {
 
-  fetch("http://localhost:3000/login", {
+    const usuario = document.getElementById("usuario").value.trim();
+    const senha = document.getElementById("senha").value.trim();
 
-    method: "POST",
+    if (!usuario || !senha) {
+        alert("Digite o usuário e a senha.");
+        return;
+    }
 
-    headers: {
-      "Content-Type": "application/json"
-    },
+    try {
 
-    body: JSON.stringify({
-      usuario: usuario.value,
-      senha: senha.value
-    })
+        const resposta = await fetch("/login", {
 
-  })
+            method: "POST",
 
-  .then(r => r.json())
+            headers: {
+                "Content-Type": "application/json"
+            },
 
-  .then(data => {
+            body: JSON.stringify({
+                usuario: usuario,
+                senha: senha
+            })
 
-    if(data.tipo === "triagem")
-      location.href = "triagem.html";
+        });
 
-    if(data.tipo === "medico")
-      location.href = "medico.html";
+        const data = await resposta.json();
 
-    if(data.tipo === "atendimento")
-      location.href = "atendimento.html";
+        console.log("Resposta do servidor:", data);
 
-  });
+        if (!resposta.ok) {
+
+            alert(data.erro || "Usuário ou senha incorretos.");
+
+            return;
+        }
+
+        if (data.tipo === "triagem") {
+
+            window.location.href = "triagem.html";
+
+        } else if (data.tipo === "medico") {
+
+            window.location.href = "medico.html";
+
+        } else if (data.tipo === "atendimento") {
+
+            window.location.href = "atendimento.html";
+
+        } else {
+
+            alert("Tipo de usuário não reconhecido.");
+
+        }
+
+    } catch (erro) {
+
+        console.error("Erro no login:", erro);
+
+        alert("Não foi possível conectar ao servidor.");
+
+    }
 
 }
 
