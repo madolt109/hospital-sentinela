@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>HealthSys - Alta Hospitalar</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        body {
+            background: #eef4f8;
+            display: block;
+            min-height: 100vh;
+            padding: 30px;
+        }
+
+        .documento {
+            width: 210mm;
+            min-height: 297mm;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 18mm;
+
+            box-shadow: 0 5px 25px rgba(0,0,0,.15);
+
+            color: #222;
+        }
+
+        .cabecalho {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 15px;
+
+            border-bottom: 2px solid #0A6EBD;
+
+            padding-bottom: 15px;
+
+            margin-bottom: 25px;
+        }
+
+        .cabecalho img {
+            width: 70px;
+            height: 70px;
+
+            object-fit: contain;
+        }
+
+        .cabecalho-texto {
+            text-align: center;
+        }
+
+        .cabecalho-texto h1 {
+            margin: 0;
+            font-size: 26px;
+            color: #0A6EBD;
+        }
+
+        .cabecalho-texto p {
+            margin: 3px 0 0;
+            color: #666;
+        }
+
+        .titulo {
+            text-align: center;
+
+            font-size: 22px;
+
+            margin: 25px 0;
+
+            color: #222;
+        }
+
+        .secao {
+            margin-top: 22px;
+        }
+
+        .secao h2 {
+            font-size: 16px;
+
+            color: #0A6EBD;
+
+            border-bottom: 1px solid #ccc;
+
+            padding-bottom: 6px;
+
+            margin-bottom: 12px;
+        }
+
+        .linha {
+            display: flex;
+            gap: 15px;
+
+            margin-bottom: 12px;
+        }
+
+        .campo {
+            flex: 1;
+        }
+
+        .campo label {
+            display: block;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            color: #555;
+
+            margin-bottom: 4px;
+        }
+
+        .campo input,
+        .campo textarea {
+
+            width: 100%;
+
+            border: none;
+
+            border-bottom: 1px solid #999;
+
+            border-radius: 0;
+
+            padding: 6px 2px;
+
+            font-size: 13px;
+
+            background: transparent;
+
+            box-shadow: none;
+        }
+
+        textarea {
+            min-height: 70px;
+
+            resize: none;
+
+            border: 1px solid #aaa !important;
+
+            padding: 8px !important;
+        }
+
+        .declaracao {
+            margin-top: 25px;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            text-align: justify;
+        }
+
+        .assinaturas {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 50px;
+
+            margin-top: 70px;
+        }
+
+        .assinatura {
+            flex: 1;
+
+            text-align: center;
+
+            border-top: 1px solid #333;
+
+            padding-top: 8px;
+
+            font-size: 12px;
+        }
+
+        .botoes {
+            width: 210mm;
+
+            margin: 20px auto;
+
+            display: flex;
+
+            gap: 10px;
+        }
+
+        .botoes button {
+            flex: 1;
+
+            border: none;
+
+            padding: 14px;
+
+            border-radius: 8px;
+
+            background: #0A6EBD;
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .botoes button:hover {
+            background: #084C8D;
+        }
+
+        @media print {
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                background: white;
+
+                padding: 0;
+            }
+
+            .documento {
+                width: 210mm;
+                min-height: 297mm;
+
+                margin: 0;
+
+                box-shadow: none;
+
+                padding: 18mm;
+            }
+
+            .botoes {
+                display: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<div class="documento">
+
+    <!-- CABEÇALHO -->
+
+    <div class="cabecalho">
+
+        <img
+            src="ChatGPT Image 17_08_2026, 11_07_05.png"
+            alt="Logo HealthSys">
+
+        <div class="cabecalho-texto">
+
+            <h1>HealthSys</h1>
+
+            <p>
+                Sistema Integrado de Atendimento Hospitalar
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h1 class="titulo">
+        TERMO DE ALTA HOSPITALAR
+    </h1>
+
+
+    <!-- DADOS DO PACIENTE -->
+
+    <div class="secao">
+
+        <h2>Dados do Paciente</h2>
+
+        <div class="linha">
+
+            <div class="campo">
+                <label>Nome completo</label>
+
+                <input
+                    type="text"
+                    id="nome">
+            </div>
+
+        </div>
+
+
+        <div class="linha">
+
+            <div class="campo">
+
+                <label>CPF</label>
+
+                <input
+                    type="text"
+                    id="cpf">
+
+            </div>
+
+
+            <div class="campo">
+
+                <label>Data de nascimento</label>
+
+                <input
+                    type="date"
+                    id="nascimento">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- INTERNAÇÃO -->
+
+    <div class="secao">
+
+        <h2>Informações da Internação</h2>
+
+        <div class="linha">
+
+            <div class="campo">
+
+                <label>Data de entrada</label>
+
+                <input
+                    type="date"
+                    id="entrada">
+
+            </div>
+
+            <div class="campo">
+
+                <label>Data da alta</label>
+
+                <input
+                    type="date"
+                    id="alta">
+
+            </div>
+
+        </div>
+
+
+        <div class="linha">
+
+            <div class="campo">
+
+                <label>Médico responsável</label>
+
+                <input
+                    type="text"
+                    id="medico">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- DIAGNÓSTICO -->
+
+    <div class="secao">
+
+        <h2>Diagnóstico</h2>
+
+        <textarea
+            id="diagnostico"
+            placeholder="Diagnóstico do paciente..."></textarea>
+
+    </div>
+
+
+    <!-- PROCEDIMENTOS -->
+
+    <div class="secao">
+
+        <h2>Procedimentos Realizados</h2>
+
+        <textarea
+            id="procedimentos"
+            placeholder="Descreva os procedimentos realizados..."></textarea>
+
+    </div>
+
+
+    <!-- MEDICAÇÕES -->
+
+    <div class="secao">
+
+        <h2>Medicamentos Prescritos</h2>
+
+        <textarea
+            id="medicamentos"
+            placeholder="Informe os medicamentos, doses e horários..."></textarea>
+
+    </div>
+
+
+    <!-- ORIENTAÇÕES -->
+
+    <div class="secao">
+
+        <h2>Orientações ao Paciente</h2>
+
+        <textarea
+            id="orientacoes"
+            placeholder="Orientações para o paciente após a alta..."></textarea>
+
+    </div>
+
+
+    <!-- RETORNO -->
+
+    <div class="secao">
+
+        <h2>Retorno</h2>
+
+        <div class="linha">
+
+            <div class="campo">
+
+                <label>Data do retorno</label>
+
+                <input
+                    type="date"
+                    id="retorno">
+
+            </div>
+
+            <div class="campo">
+
+                <label>Especialidade</label>
+
+                <input
+                    type="text"
+                    id="especialidade">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- OBSERVAÇÕES -->
+
+    <div class="secao">
+
+        <h2>Observações</h2>
+
+        <textarea
+            id="observacoes"
+            placeholder="Observações adicionais..."></textarea>
+
+    </div>
+
+
+    <!-- DECLARAÇÃO -->
+
+    <div class="declaracao">
+
+        Declaro que o paciente acima identificado recebeu alta
+        hospitalar após avaliação médica, encontrando-se em
+        condições de continuidade dos cuidados conforme as
+        orientações fornecidas neste documento.
+
+    </div>
+
+
+    <!-- ASSINATURAS -->
+
+    <div class="assinaturas">
+
+        <div class="assinatura">
+
+            Médico responsável
+
+        </div>
+
+        <div class="assinatura">
+
+            Paciente / Responsável
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- BOTÕES -->
+
+<div class="botoes">
+
+    <button onclick="window.print()">
+        🖨️ Imprimir Alta
+    </button>
+
+    <button onclick="window.history.back()">
+        ← Voltar
+    </button>
+
+</div>
+
+
+</body>
+
+</html>
