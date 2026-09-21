@@ -17,16 +17,6 @@
     }
   ],
   "pacientes": [
-   {
-      "id": 1778768250255,
-      "nome": "teste8",
-      "sintoma": "infarto",
-      "temperatura": 37,
-      "alergia": "nao ",
-      "observacao": "teste",
-      "risco": "vermelho",
-      "status": "aguardando_medico",
-      "createdAt": "2026-05-14T14:17:30.255Z"
-    },
+  
   ]
 }
