@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -97,7 +97,7 @@ async function analisarRisco() {
     resultado.textContent = "Analisando os dados...";
 
     try {
-        const resposta = await fetch("http://localhost:3000/analisar-risco", {
+        const resposta = await fetch("/analisar-risco", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ sintoma, temperatura, observacao })
@@ -152,7 +152,7 @@ async function salvar() {
     }
 
     try {
-        const resposta = await fetch("http://localhost:3000/triagem", {
+        const resposta = await fetch("/triagem", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(analiseAtual)
@@ -194,4 +194,3 @@ function invalidarAnalise() {
 
 </body>
 </html>
-```
